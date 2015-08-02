@@ -3,56 +3,26 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue_grey-indigo.min.css">
-<script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
 <script
   src="/bower_components/webcomponentsjs/webcomponents.js">
 </script>
-<link rel="import"
-  href="../../components/core-toolbar/core-toolbar.html">
-<link rel="import"
-  href="../../components/core-header-panel/core-header-panel.html">
-<link rel="import"
-  href="../../components/core-icons/core-icons.html">
-<link rel="import"
-  href="../../components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/core-header-panel/core-header-panel.html">
 <link rel="import" href="/bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="/bower_components/paper-header-panel/paper-header-panel.html">
 
 </head>
 
 <body>
-	<div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
-
-  <core-header-panel flex>
-  <core-toolbar class="medium-tall">
-	<span class="core-header">Lewis McGeary</span>
-</core-toolbar>
-	</core-header-panel>
+    <div class="layout wrap inline center-center">
+      <paper-header-panel class="blue">
+        <div class="paper-header">standard</div>
+        <div class="content">
 
 
-
-<!-- Wide card with share menu button -->
-<style>
-  .demo-card-wide.mdl-card {
-    width: 50%;
-  }
-  .demo-card-wide > .mdl-card__title {
-    color: #fff;
-    height: 176px;
-    background: url('../assets/demos/welcome_card.jpg') center / cover;
-  }
-  .demo-card-wide > .mdl-card__menu {
-    color: #fff;
-  }
-</style>
-<div align="center">
-<div class="mdl-card mdl-shadow--2dp demo-card-wide" align="center">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Welcome</h2>
-  </div>
   <div class="mdl-card__supporting-text">
     Check out <a href="https://play.google.com/store/apps/details?id=com.gmail.appytalkteam.appytalkcore.ru">Appy Talk: Russian</a> on Google Play or find me on <a href="http://www.google.com/+LewisMcGeary">Google+</a> <a href="https://twitter.com/lewismcgeary">Twitter</a> or <a href="https://github.com/lewismcgeary">GitHub</a>.
   </div>
@@ -60,6 +30,7 @@
   <a href="https://twitter.com/lewismcgeary" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lewismcgeary</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
+
 <!-- Place this tag where you want the widget to render. -->
 <div class="g-follow" data-annotation="none" data-height="20" data-href="//plus.google.com/u/0/109600738460265587799" data-rel="author"></div>
 
@@ -73,28 +44,15 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
+
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/lewismcgeary" aria-label="Follow @lewismcgeary on GitHub">Follow @lewismcgeary</a>
 <!-- Place this tag right after the last button or just before your close body tag. -->
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-<div class="mdl-card--actions" align="right" margin="1em" padding="1em">
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
-<!-- Colored FAB button -->
-<a href="mailto:lewismcgeary@gmail.com">
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-button--"> 
-  <i class="material-icons">mail</i>
-</button>
-</a>
 </div>
+      </paper-header-panel>
+    </div>
 
-  </div>
-  <div class="mdl-card__menu">
-    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">share</i>
-    </button>
-  </div>
-</div>
-</div>
-</div>
 </body>
 </html>
