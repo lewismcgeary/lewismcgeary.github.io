@@ -1,0 +1,19 @@
+{
+  "name": "lewismcgeary.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lewismcgeary/lewismcgeary.github.io",
+  "authors": [
+    "Lewis McGeary <lewismcgeary@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5"
+  }
+}
