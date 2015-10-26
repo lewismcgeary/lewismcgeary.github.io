@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            http://lewismcgeary.github.io
+title:            lewismcgeary.github.io
 locale:           en_US
-url:              lewismcgeary.github.io
+url:              http://lewismcgeary.github.io
 
 
 # Jekyll configuration
