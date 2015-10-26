@@ -1,1 +1,0 @@
-# lewismcgeary.github.io
