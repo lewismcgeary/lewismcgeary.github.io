@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            Site Title
+title:            lewismcgeary.github.io
 locale:           en_US
-url:
+url:              lewismcgeary.github.io
 
 
 # Jekyll configuration
@@ -26,21 +26,21 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
+  name: Lewis McGeary
   avatar: bio-photo.jpg
   bio: "Describe your self."
-  email:
+  email: 
   disqus-shortname:
-  twitter: #username
+  twitter: lewismcgeary
   facebook: #username
   google:
-    plus: #username
+    plus: lewismcgeary
     analytics:
     verify:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: lewismcgeary
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: #username
   xing: #username
