@@ -65,10 +65,9 @@ body {
 		list-style-type: none;
 	}
 	li {
-		display: block;
+		display: inline;
 		list-style-type: none;
-		border-bottom: 1px solid lighten($black,80);
-		border-bottom: 1px solid fade($black,10);
+		margin-right: 25px;
 		@include font-rem(16);
 		&:last-child {
 			border-bottom: 0 solid transparent;
@@ -80,7 +79,7 @@ body {
 			border-bottom: 0 solid transparent;
 		}
 		a {
-			display: block;
+			display: inline;
 			padding: 10px 0;
 			decoration: none;
 			border-bottom: 0 solid transparent;

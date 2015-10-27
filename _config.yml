@@ -29,13 +29,13 @@ kramdown:
 owner:
   name: Lewis McGeary
   avatar: bio-photo.jpg
-  bio: "Describe your self."
+  bio: "Making things in Scotland. Talk to me about Android development."
   email: 
   disqus-shortname:
   twitter: lewismcgeary
   facebook: #username
   google:
-    plus: lewismcgeary
+    plus: LewisMcGeary
     analytics:
     verify:
     ad-client:
