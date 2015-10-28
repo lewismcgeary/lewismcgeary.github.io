@@ -14,7 +14,7 @@ image:
 In Android version 5.0, Lollipop, Google introduced its own vector graphics format, the VectorDrawable. The benefits of using vector graphics are numerous when dealing with a wide range of screen sizes, but in this article I’ll be discussing another aspect, the ability to manipulate how images are drawn in real time so they can move and change on the screen. In this case I’ll be showing how we can use the AnimatedVectorDrawable class to create this effect, morphing between the Android and Apple Logos.
 
 <figure>
-  <img src="{{ site.url }}/images/pathMorphing/pathMorphing-full-transition-gif-quarter-not-optimized.gif">
+  <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
 </figure>
 
 I’ll start with a brief introduction to VectorDrawables in Android, using a simple example:
@@ -32,7 +32,7 @@ I’ll start with a brief introduction to VectorDrawables in Android, using a si
  </vector>
  {% endhighlight %}
 
- This contains a `<path>` element inside a `<vector>` element. In this article I’ll be mainly focussing on the <path> section and what we can do with it.
+ This contains a `<path>` element inside a `<vector>` element. In this article I’ll be mainly focussing on the `<path>` section and what we can do with it.
 
  The first thing to know when considering animating a VectorDrawable with a changing shape is that, as stated in [Google’s overview](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html): **“the paths must be compatible for morphing. In more details, the paths should have exact same length of commands, and exact same length of parameters for each command”**.
  So what does this mean in practice?
@@ -58,9 +58,13 @@ l 0,-70 70,70 0,0 -70,70 : l is the lineto command, which draws straight lines, 
 
 Finally z which means closepath, it draws a straight line from where we are now, back to our starting point.
 
-So this particular pathData draws us a right-angled triangle.
+<figure class="third">
+  <img src="{{ site.url }}/images/pathMorphing/vector-triangle-steps-1-2.png">
+  <img src="{{ site.url}}/images/pathMorphing/vector-triangle-steps-3-4.png">
+  <img src="{{ site.url}}/images/pathMorphing/vector-triangle-steps-5-6.png">
+</figure>
 
-![Triangle VectorDrawable]({{ site.url }}/images/pathMorphing/right-angled-triangle-vector.png)
+So this particular pathData draws us a right-angled triangle.
 
 Now that we have an idea of what pathData looks like and does, we can go back to that quote from Google earlier:
 
@@ -111,7 +115,7 @@ Two of the c commands here aren’t really curves at all of course, c10,0 20,0 3
 
 So far these are not animated though, just the starting state and finishing state. To make a transition from one to the other, we need to define the change in some xml files.
 
-We have our android head VectorDrawable which defines our original static vector in res/drawables in the file android_logo_vector_morphable.xml:
+We have our android head VectorDrawable which defines our original static vector in res/drawables in the file **android_logo_vector_morphable.xml**:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,9 +131,11 @@ We have our android head VectorDrawable which defines our original static vector
 </vector>
 {% endhighlight %}
 
-Our objectAnimator which defines what the change will be is in res/animator in the file head_leaf_transition.xml:
+Our objectAnimator which defines what the change will be is in res/animator in the file **head_leaf_transition.xml**:
 
 {% highlight xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
 <objectAnimator
    android:duration="@integer/morphing_time"
    android:propertyName="pathData"
@@ -144,6 +150,13 @@ Our objectAnimator which defines what the change will be is in res/animator in t
                     c-8.053787,0.32369 -17.792625,5.36682 -23.569427,12.126399
                     c-5.177124,5.985922 -9.711121,15.566772 -8.48777,24.749359
                     c8.976891,0.69453 18.147476,-4.561718 23.73513,-11.329308"/>
+    <objectAnimator
+        android:duration="@integer/morphing_time"
+        android:propertyName="fillColor"
+        android:valueFrom="@color/android_green"
+        android:valueTo="@color/apple_black"
+        />
+</set>
 {% endhighlight %}
 
 and our animated vector drawable in res/drawables which connects the two:
@@ -160,14 +173,22 @@ and our animated vector drawable in res/drawables which connects the two:
 
 Note that in our original VectorDrawable the path has the name “head” and in our animated-vector, the `<target>` attribute targets that path name. Essentially this is an instruction to apply this animator to this path. The transition looks like this:
 
+<figure>
+  <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-blank-head.gif">
+</figure>
+
 There are some missing elements from the head here – the eyes and the antennae. They don’t have an obvious equivalent to morph to, so we’ll just make them disappear. 
 
 This makes the eyes disappear as if they were closing and the antennae just shrink away, leaving the way clear for the head to transition cleanly into a leaf.
 
 Next we apply the same principles to the next part of the transition. For my method I split the apple in two and worked on one arm at a time, again the trick here was to make sure the arms were fully constructed using the same number of curveto commands as the apple, so some of these were curves which were actually straight lines, and some weren’t really lines at all, just zero-length curves (c0,0 0,0 0,0). So now we have:
 
+<figure>
+  <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-body-no-legs.gif">
+</figure>
+
 At this point everything’s really falling into place; the end result is great but we need to bring in the Android body to bridge the gap in the middle. This part is a lot simpler: the body is simply stretching a bit to disguise the fact that two separate halves are joining together. The legs don’t actually need to do anything, as they’re obscured by everything else, so we’re essentially done. We can add some interpolators to our objectAnimators to make the whole thing a bit more satisfying with a bounce effect and a nice overshoot for the leaf to settle into place and voilà – the final product:
 
 <figure>
-  <img src="{{ site.url }}/images/pathMorphing/pathMorphing-full-transition-gif-quarter-not-optimized.gif">
+  <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
 </figure>
