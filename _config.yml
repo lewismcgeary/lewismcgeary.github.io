@@ -1,7 +1,7 @@
 # Site wide configuration
 
 title:            lewismcgeary.github.io
-locale:           en_US
+locale:           en_GB
 url:              https://lewismcgeary.github.io
 #https://lewismcgeary.github.io for publishing
 #http://localhost:4000 for local testing

@@ -1,9 +1,10 @@
 ---
 layout: post
+categories: posts
 title: PathMorphing with AnimatedVectorDrawables in Android
 excerpt: "A walkthrough of how to morph between two complex shapes using Androids native vector format."
-modified: 2015-10-27
-tags: [Android, AnimatedVectorDrawable, VectorDrawable, pathMorph, SVG]
+modified: 2015-10-28
+tags: [Android, AnimatedVectorDrawable, VectorDrawable, pathMorph, SVG, objectAnimator]
 comments: true
 image:
   feature: sample-image-5.jpg
