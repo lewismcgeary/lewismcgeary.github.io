@@ -14,6 +14,8 @@ image:
 
 In Android version 5.0, Lollipop, Google introduced its own vector graphics format, the VectorDrawable. The benefits of using vector graphics are numerous when dealing with a wide range of screen sizes, but in this article I’ll be discussing another aspect, the ability to manipulate how images are drawn in real time so they can move and change on the screen. In this case I’ll be showing how we can use the AnimatedVectorDrawable class to create this effect, morphing between the Android and Apple Logos.
 
+The full source code is [available on GitHub](https://github.com/lewismcgeary/AndroidtoAppleVectorLogo).
+
 <figure>
   <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
 </figure>
