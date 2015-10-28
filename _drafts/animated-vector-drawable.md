@@ -60,6 +60,8 @@ Finally z which means closepath, it draws a straight line from where we are now,
 
 So this particular pathData draws us a right-angled triangle.
 
+![Triangle VectorDrawable]({{ site.url }}/images/pathMorphing/right-angled-triangle-vector.png)
+
 Now that we have an idea of what pathData looks like and does, we can go back to that quote from Google earlier:
 
 > “Note that the paths must be compatible for morphing. In more details, the paths should have exact same length of commands, and exact same length of parameters for each command”
@@ -70,10 +72,10 @@ You may have realised at this point why the triangle pathData we looked at had a
 
 In order to achieve the path morph between the Android and Apple logos, we need to do a similar thing to make sure the pathData is compatible. The two logos are clearly quite different, so it takes a bit of manipulation to make them compatible, which I’ll go through here. A more common use case for this type of pathMorphing may be to transition between simple icons like play->pause or tick->cross, but if you grasp the process here, you’ll be able to apply it in these cases.
 
-The first thing I needed was to have the logos in the appropriate format. As mentioned earlier VectorDrawables are related to one of the most common vector graphic formats, the SVG. I pulled a couple of SVG files from [here] and [here] and used the [svg to vectordrawable tool] to get my starting point. I also opened the SVG files up in [this free Vector graphics program] to see what I’m really dealing with.
+The first thing I needed was to have the logos in the appropriate format. As mentioned earlier VectorDrawables are related to one of the most common vector graphic formats, the SVG. I pulled a couple of SVG files for the [Apple logo](https://commons.wikimedia.org/wiki/File:Apple_logo_black.svg) and the [Android robot](https://commons.wikimedia.org/wiki/File:Android_robot.svg) and used the [svg2android](http://inloop.github.io/svg2android/) online conversion tool to get my starting point. I also opened the SVG files up in [VectorDraw](https://itunes.apple.com/gb/app/vectordraw/id907037760?mt=12) to see what I’m really dealing with.
 I realized pretty early on that when I’m going to start messing about with the pathData to make these compatible, that I have a far better chance when manipulating the Android logo with its straight lines and regular shapes than I would trying to change the Apple logo which is made entirely of cubic Bezier curves. I decided to leave the Apple logo as-is as much as possible and to change and re-create the Android logo as needed.
 
-Another thing struck me when looking at the images in [Vector graphics program]. It seemed clear that the Android head and the Apple leaf would work well as a set of objects to morph between. The apple itself would be trickier, but I noticed similarities between the Android’s arms and the apple which gave a good direction to follow.
+Another thing struck me when looking at the images in VectorDraw. It seemed clear that the Android head and the Apple leaf would work well as a set of objects to morph between. The apple itself would be trickier, but I noticed similarities between the Android’s arms and the apple which gave a good direction to follow.
 
 <figure class="half">
   <img src="{{ site.url }}/images/pathMorphing/Apple-Logo-with-end-points-marked.png">
@@ -102,6 +104,8 @@ m85,40
     c-20,0 -30,15 -30,20
     c10,0 20,0 30,0
 {% endhighlight %}
+
+![Modified android head]({{ site.url }}/images/pathMorphing/Android-Head-no-features.png)
 
 Two of the c commands here aren’t really curves at all of course, c10,0 20,0 30,0 defines a curve with all of its points along zero on the y-axis, so it’s really a horizontal line. Using this trick means that the Android head and the Apple leaf pathData are now compatible: each has one m command followed by four c curves, and they both have the same number of coordinates in the right places, although the leaf uses many more decimal places.
 
