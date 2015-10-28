@@ -2,8 +2,8 @@
 
 title:            lewismcgeary.github.io
 locale:           en_US
-url:              http://localhost:4000
-#http://lewismcgeary.github.io for publishing
+url:              https://lewismcgeary.github.io
+#https://lewismcgeary.github.io for publishing
 #http://localhost:4000 for local testing
 
 # Jekyll configuration
