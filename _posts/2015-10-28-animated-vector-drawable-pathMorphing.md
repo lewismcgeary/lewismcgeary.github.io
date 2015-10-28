@@ -130,11 +130,15 @@ We have our android head VectorDrawable which defines our original static vector
    <path
        android:name="head"
        android:fillColor="@color/android_green"
-       android:pathData="@string/android_head"/>
+       android:pathData="M85,40
+                          c10,0 20,0 30,0
+                          c0,-5 -10,-20 -30,-20
+                          c-20,0 -30,15 -30,20
+                          c10,0 20,0 30,0"/>
 </vector>
 {% endhighlight %}
 
-Our objectAnimator which defines what the change will be is in res/animator in the file **head_leaf_transition.xml**:
+Our objectAnimator set which defines what the change will be is in res/animator in the file **head_leaf_transition.xml**. Notice I've actually included two animators in the same set, to change the shape and the colour:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
@@ -143,16 +147,16 @@ Our objectAnimator which defines what the change will be is in res/animator in t
    android:duration="@integer/morphing_time"
    android:propertyName="pathData"
    android:valueType="pathType"
-   android:valueFrom="m85,40
+   android:valueFrom="M85,40
                       c10,0 20,0 30,0
                       c0,-5 -10,-20 -30,-20
                       c-20,0 -30,15 -30,20
                       c10,0 20,0 30,0"
-   android:valueTo="m108,35
-                    c5.587379,-6.7633 9.348007,-16.178439 8.322067,-25.546439
-                    c-8.053787,0.32369 -17.792625,5.36682 -23.569427,12.126399
-                    c-5.177124,5.985922 -9.711121,15.566772 -8.48777,24.749359
-                    c8.976891,0.69453 18.147476,-4.561718 23.73513,-11.329308"/>
+   android:valueTo="M108,35
+    c5.587379,-6.7633 9.348007,-16.178439 8.322067,-25.546439
+    c-8.053787,0.32369 -17.792625,5.36682 -23.569427,12.126399
+    c-5.177124,5.985922 -9.711121,15.566772 -8.48777,24.749359
+    c8.976891,0.69453 18.147476,-4.561718 23.73513,-11.329308"/>
     <objectAnimator
         android:duration="@integer/morphing_time"
         android:propertyName="fillColor"
