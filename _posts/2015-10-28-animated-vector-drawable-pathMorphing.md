@@ -17,7 +17,7 @@ In Android version 5.0, Lollipop, Google introduced its own vector graphics form
 The full source code is [available on GitHub](https://github.com/lewismcgeary/AndroidtoAppleVectorLogo).
 
 <figure>
-  <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
+  <img itemprop="image" src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
 </figure>
 
 I’ll start with a brief introduction to VectorDrawables in Android, using a simple example:
