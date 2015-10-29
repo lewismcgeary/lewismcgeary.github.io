@@ -190,9 +190,22 @@ Note that in our original VectorDrawable the path has the name “head” and in
 
 There are some missing elements from the head here – the eyes and the antennae. They don’t have an obvious equivalent to morph to, so we’ll just make them disappear. 
 
+{% highlight xml %}
+<!--partial code from right antenna objectAnimator -->
+<objectAnimator
+...
+android:valueFrom="M95,25
+                  l6,-10"
+android:valueTo="M95,25
+                  l0,0"
+.../>
+{% endhighlight %}
+
 This makes the eyes disappear as if they were closing and the antennae just shrink away, leaving the way clear for the head to transition cleanly into a leaf.
 
-Next we apply the same principles to the next part of the transition. For my method I split the apple in two and worked on one arm at a time, again the trick here was to make sure the arms were fully constructed using the same number of curveto commands as the apple, so some of these were curves which were actually straight lines, and some weren’t really lines at all, just zero-length curves (c0,0 0,0 0,0). So now we have:
+When adding these extra transitions, we use the original VectorDrawable and just add a new `<path>` tag for each shape, and the original AnimatedVectorDrawable with a new `<target>` tag for each shapes animation. We do however need a separate objectAnimator for each one.
+
+Then we apply the same principles to the next part of the transition. For my method I split the apple in two and worked on one arm at a time, again the trick here was to make sure the arms were fully constructed using the same number of curveto commands as the apple, so some of these were curves which were actually straight lines, and some weren’t really lines at all, just zero-length curves (c0,0 0,0 0,0). So now we have:
 
 <figure>
   <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-body-no-legs.gif">
