@@ -167,6 +167,9 @@ Our objectAnimator set which defines what the change will be is in res/animator 
 </set>
 {% endhighlight %}
 
+**Tip:** I'm including the full pathData in these code snippets to keep everything together. In practice you can store these as Strings in your values folder and instead refer to them using the `@string/android_head` style for easier reuse.
+{: .notice}
+
 and our animated vector drawable in res/drawables which connects the two:
 
 {% highlight xml %}
