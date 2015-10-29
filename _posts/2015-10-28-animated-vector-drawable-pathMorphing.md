@@ -216,3 +216,6 @@ At this point everything’s really falling into place; the end result is great 
 <figure>
   <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
 </figure>
+
+**Note:** I haven't gone into full exhaustive detail here about this implementation, there are some frustrations I found along the way(particularly when using startOffset) which I may turn into future posts and/or bug reports.
+{: .notice}
