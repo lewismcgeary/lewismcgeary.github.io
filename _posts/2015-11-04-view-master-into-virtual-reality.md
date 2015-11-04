@@ -3,7 +3,7 @@ layout: post
 categories: posts
 title: Turning a retro View-Master into a Virtual Reality viewer
 excerpt: "I found an unopened 90s View-Master and turned it into a Google Cardboard viewer"
-modified: 2015-10-28
+modified: 2015-11-04
 tags: [VR, Virtual Reality, Google Cardboard, View-Master]
 comments: true
 image:
