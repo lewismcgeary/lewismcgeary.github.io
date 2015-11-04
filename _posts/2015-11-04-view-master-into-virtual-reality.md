@@ -7,7 +7,7 @@ modified: 2015-11-04
 tags: [VR, Virtual Reality, Google Cardboard, View-Master]
 comments: true
 image:
-  feature: viewmaster/viewmaster-banner-cropped.png
+  feature: viewmaster/viewmaster-banner-reduced-filesize.png
   credit: 
   creditlink: 
   thumb: 
