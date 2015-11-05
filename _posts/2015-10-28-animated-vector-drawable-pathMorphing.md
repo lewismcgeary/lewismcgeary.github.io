@@ -3,7 +3,7 @@ layout: post
 categories: posts
 title: PathMorphing with AnimatedVectorDrawables in Android
 excerpt: "A walkthrough of how to morph between two complex shapes using Androids native vector format."
-modified: 2015-10-28
+modified: 2015-11-05
 tags: [Android, AnimatedVectorDrawable, VectorDrawable, pathMorph, SVG, objectAnimator]
 comments: true
 image:
@@ -15,7 +15,7 @@ image:
 
 In Android version 5.0, Lollipop, Google introduced its own vector graphics format, the VectorDrawable. The benefits of using vector graphics are numerous when dealing with a wide range of screen sizes, but in this article I’ll be discussing another aspect, the ability to manipulate how images are drawn in real time so they can move and change on the screen. In this case I’ll be showing how we can use the AnimatedVectorDrawable class to create this effect, morphing between the Android and Apple Logos.
 
-The full source code is [available on GitHub](https://github.com/lewismcgeary/AndroidtoAppleVectorLogo).
+The full source code is **[available on GitHub](https://github.com/lewismcgeary/AndroidtoAppleVectorLogo)**.
 
 <figure>
   <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
@@ -216,6 +216,8 @@ At this point everything’s really falling into place; the end result is great 
 <figure>
   <img src="{{ site.url }}/images/pathMorphing/pathMorphing-no-buttons-full-transition.gif">
 </figure>
+
+Don't forget the full source code for this project is **[available on GitHub](https://github.com/lewismcgeary/AndroidtoAppleVectorLogo)**.
 
 **Note:** I haven't gone into full exhaustive detail here about this implementation, there are some frustrations I found along the way(particularly when using startOffset) which I may turn into future posts and/or bug reports.
 {: .notice}
