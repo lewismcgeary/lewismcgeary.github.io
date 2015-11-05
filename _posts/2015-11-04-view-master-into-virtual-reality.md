@@ -56,8 +56,9 @@ And it worked.
 
 It wasn't quite perfect though. The phone sits where the View-Master reels would normally be, so of course the focal length of the lenses is just right, but there are little bits of plastic that stick out which prevent the phone from sitting flat against the eyepiece. I took a coping saw and started some surgery. I left as much of the four corner pieces as I could to help the two halves of the unit line up, and to provide a platform for the bottom edge of the phone.
 
-<figure>
+<figure class="half">
   <img src="{{ site.url }}/images/viewmaster/viewmaster-dismantled-side-view.jpg">
+  <img src="{{ site.url }}/images/viewmaster/viewmaster-phone-on-eyepiece-cropped.jpg">
 </figure>
 
 At this point it was time to put things back together, and my method of choice was the humble elastic band. I used a few inside to replace the spring on the shutter mechanism, and a few red ones outside to hold it all together and provide some padding for the phone. The original spring method for the shutter would no longer work and I had to flip the shutter lever around to the opposite side, but after that it worked nicely.
