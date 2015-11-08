@@ -8,8 +8,8 @@ tags: [Android, AnimatedVectorDrawable, VectorDrawable, pathMorph, SVG, objectAn
 comments: true
 image:
   feature: /pathMorphing/pathMorphing-banner.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  credit: 
+  creditlink: 
   thumb: pathMorphing/pathMorphing-no-buttons-full-transition.gif
 ---
 
